@@ -1,0 +1,15 @@
+---
+- name: Install dependencies and build application
+  hosts: localhost  # ou spécifiez vos hosts cibles
+  become: yes       # si besoin de privilèges élevés
+  
+  tasks:
+    - name: Install Node.js dependencies
+      command: npm install
+      args:
+        chdir: /var/jenkins_home/workspace  # chemin vers votre répertoire de projet
+
+    - name: Build application
+      command: npm run build
+      args:
+        chdir: /var/jenkins_home/workspace  # chemin vers votre répertoire de projet
