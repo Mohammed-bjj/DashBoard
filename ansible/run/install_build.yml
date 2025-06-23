@@ -1,7 +1,7 @@
 ---
 - name: Install dependencies and build application
   hosts: localhost  # ou spécifiez vos hosts cibles
-  become: yes       # si besoin de privilèges élevés
+  become: false       # si besoin de privilèges élevés
   
   tasks:
     - name: Install Node.js dependencies
