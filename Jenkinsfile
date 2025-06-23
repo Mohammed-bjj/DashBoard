@@ -1,7 +1,9 @@
 pipeline {
     agent any
 
- 
+    tools {
+        nodejs "node" // Le nom que vous avez donné à votre installation Node.js
+    }
     
     stages {
         stage('Checkout') {
