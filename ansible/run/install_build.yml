@@ -9,9 +9,9 @@
     - name: Install Node.js dependencies
       command: npm install
       args:
-        chdir: {{project_dir}} # chemin vers votre répertoire de projet
+        chdir: {{ project_dir }} # chemin vers votre répertoire de projet
 
     - name: Build applications
       command: npm run build
       args:
-        chdir: {{project_dir}}  # chemin vers votre répertoire de projet
+        chdir: {{ project_dir }}  # chemin vers votre répertoire de projet
