@@ -2,7 +2,7 @@
 - name: Install dependencies and build application
   hosts: localhost  # ou spécifiez vos hosts cibles
   become: false       # si besoin de privilèges élevés
-  ars:
+  vars:
     project_dir: "/var/jenkins_home/workspace/build-app-angular" 
   
   tasks:
