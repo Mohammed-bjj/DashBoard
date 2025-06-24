@@ -30,8 +30,6 @@ module.exports = tseslint.config(
           style: "kebab-case",
         },
       ],
-      // Correction ici - version simplifiée sans objet de configuration
-      "@angular-eslint/prefer-standalone": "warn"
     },
   },
   {
