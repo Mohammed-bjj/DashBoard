@@ -16,7 +16,7 @@ pipeline {
             steps {
                 // Exécution des tâches Ansible pour installer les dépendances et builder
                 ansiblePlaybook(
-                    playbook: 'ansible/run/install_build.yml', // Chemin vers votre playbook Ansible
+                    playbook: 'ansible/playbooks/install_build.yml', // Chemin vers votre playbook Ansible
                     inventory: 'ansible/inventory/inventory.ini',   // Chemin vers votre inventaire
                     credentialsId: '' // ID des credentials si nécessaire
                 )
