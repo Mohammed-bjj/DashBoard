@@ -23,4 +23,4 @@
     - name: Run angular Test 
       command: npm run test
       args: 
-        chdir: "{{ project_dir }}
+        chdir: "{{ project_dir }}"
