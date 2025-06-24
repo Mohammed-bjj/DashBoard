@@ -14,10 +14,13 @@
       command: npm run lint
       args:
         chdir: "{{ project_dir }}"
-    
-    
 
     - name: Build applications
       command: "{{ build_command }}"
       args:
         chdir: "{{ project_dir }}"  # chemin vers votre répertoire de projet
+
+    - name: Run angular Test 
+      command: npm run test
+      args: 
+        chdir: "{{ project_dir }}
