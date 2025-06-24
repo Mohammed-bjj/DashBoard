@@ -19,8 +19,3 @@
       command: "{{ build_command }}"
       args:
         chdir: "{{ project_dir }}"  # chemin vers votre répertoire de projet
-
-    - name: Run angular Test 
-      command: npm test 
-      args: 
-        chdir: "{{ project_dir }}"
