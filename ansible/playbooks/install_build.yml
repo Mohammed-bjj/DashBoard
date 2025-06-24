@@ -1,9 +1,9 @@
 ---
 - name: Install dependencies and build application
   hosts: localhost  # ou spécifiez vos hosts cibles
-  become: false       # si besoin de privilèges élevés
-  vars_files: 
-    - "{{ ansible_host }}.yml"
+  become: false     # si besoin de privilèges élevés
+  vars_files:
+    - "vars/environments/{{ ansible_host }}.yml"  # Chemin structuré pour les variables
 
   tasks:
     - name: Install Node.js dependencies
