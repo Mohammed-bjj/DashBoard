@@ -3,7 +3,7 @@
   hosts: localhost  # ou spécifiez vos hosts cibles
   become: false       # si besoin de privilèges élevés
   vars_files: 
-    - "vars/environments/{{ env | default('localhost') }}.yml"
+    - "vars/environments/localhost.yml"
 
   tasks:
     - name: Install Node.js dependencies
