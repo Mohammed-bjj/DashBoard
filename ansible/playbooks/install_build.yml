@@ -2,7 +2,7 @@
   hosts: localhost
   become: false
   vars_files:
-    - "vars/environments/localhost.yml"  # Chemin fixe pour les variables
+    - "ansible/vars/environments/localhost.yml"  # Chemin fixe pour les variables
 
   tasks:
     - name: Install Node.js dependencies
