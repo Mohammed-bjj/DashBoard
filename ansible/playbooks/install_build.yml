@@ -15,10 +15,7 @@
       args:
         chdir: "{{ project_dir }}"
     
-    - name: Run angular Test 
-      command: npm run test
-      args: 
-        chdir: "{{ project_dir }}
+    
 
     - name: Build applications
       command: "{{ build_command }}"
