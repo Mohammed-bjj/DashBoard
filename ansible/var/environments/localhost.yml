@@ -1,0 +1,5 @@
+project_dir: "/var/jenkins_home/workspace/build-app-angular"
+install_command: "npm Install"
+build_command_: "npm run build"
+
+environment: "localhost"

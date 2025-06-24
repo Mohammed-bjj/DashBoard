@@ -2,16 +2,16 @@
 - name: Install dependencies and build application
   hosts: localhost  # ou spécifiez vos hosts cibles
   become: false       # si besoin de privilèges élevés
-  vars:
-    project_dir: "/var/jenkins_home/workspace/build-app-angular" 
-  
+  vars_files: 
+    - "vars/environments/{{ env | default('localhost') }}.yml"
+
   tasks:
     - name: Install Node.js dependencies
-      command: npm install
+      command: "{{ install_command | default('npm Install') }}"
       args:
         chdir: "{{ project_dir }}" # chemin vers votre répertoire de projet
 
     - name: Build applications
-      command: npm run build
+      command: "{{ build_command }}"
       args:
         chdir: "{{ project_dir }}"  # chemin vers votre répertoire de projet
