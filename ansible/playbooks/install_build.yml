@@ -3,7 +3,7 @@
   hosts: localhost  # ou spécifiez vos hosts cibles
   become: false       # si besoin de privilèges élevés
   vars_files: 
-    - "vars/environments/localhost.yml"
+    - "vars/environments/{{ ansible_host }}.yml"
 
   tasks:
     - name: Install Node.js dependencies
