@@ -1,12 +1,11 @@
 - name: Installer les dépendances et builder l'application
-  hosts: localhost
   become: false
   vars_files:
-    - "ansible/vars/environments/localhost.yml"  # Chemin fixe pour les variables
+    - "{{ playbook_dir }}/../vars/environments/localhost.yml"
 
   tasks:
     - name: Install Node.js dependencies
-      command: "{{ install_command | default('npm Install') }}"
+      command: "{{ install_command }}"
       args:
         chdir: "{{ project_dir }}" # chemin vers votre répertoire de projet
 
