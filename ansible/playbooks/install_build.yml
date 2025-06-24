@@ -2,13 +2,18 @@
   hosts: localhost
   become: false
   vars_files:
-    - "ansible/vars/environments/localhost.yml"  # Chemin fixe pour les variables
+      - "{{ playbook_dir }}/../vars/environments/localhost.yml"
 
   tasks:
     - name: Install Node.js dependencies
       command: "{{ install_command | default('npm Install') }}"
       args:
         chdir: "{{ project_dir }}" # chemin vers votre répertoire de projet
+        
+    - name: Angular ESLint Validatio
+      command: npm run lint
+      args:
+        chdir: "{{ project_dir }}"
 
     - name: Build applications
       command: "{{ build_command }}"
