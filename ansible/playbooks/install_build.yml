@@ -1,11 +1,12 @@
 - name: Installer les dépendances et builder l'application
+  hosts: localhost
   become: false
   vars_files:
-    - "{{ playbook_dir }}/../vars/environments/localhost.yml"
-
+      - "{{ playbook_dir }}/../vars/environments/localhost.yml"
+      
   tasks:
     - name: Install Node.js dependencies
-      command: "{{ install_command }}"
+      command: "{{ install_command | default('npm Install') }}"
       args:
         chdir: "{{ project_dir }}" # chemin vers votre répertoire de projet
 
